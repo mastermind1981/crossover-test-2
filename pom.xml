@@ -12,7 +12,7 @@
         <crossover.browser>CHROME</crossover.browser>
         <crossover.remote>false</crossover.remote>
         <crossover.test_type>WEB</crossover.test_type>
-        <crossover.suite.xml>src/test/resources/membertests.xml</crossover.suite.xml>
+        <crossover.suite.xml>src/test/resources/crosssover_tests.xml</crossover.suite.xml>
         <crossover.web.url>https://www.crossover.com</crossover.web.url>
         <crossover.timeout.seconds>30</crossover.timeout.seconds>
         <crossover.hub.url>https://selenium.crossover.com/wd/hub</crossover.hub.url>
@@ -171,7 +171,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>rajesh/crossovertest</repository>
+                    <repository>rajesh23427/crossovertest</repository>
                     <tag>automationtest</tag>
                 </configuration>
             </plugin>
