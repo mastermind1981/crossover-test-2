@@ -4,11 +4,14 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.testng.IReporter;
 import org.testng.IResultMap;
 import org.testng.ISuite;
@@ -24,7 +27,11 @@ public class ExtentReportListener implements IReporter {
     @Override
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
         extent = new ExtentReports(outputDirectory + File.separator + "html" + File.separator + "index.html", true);
-        extent.loadConfig(new File("extent-config.xml"));
+        try {
+            extent.loadConfig(Res.getResource("extent-config.xml").toURI().toURL());
+        } catch (URISyntaxException | MalformedURLException ex) {
+            throw new RuntimeException("Unable to read the extent config", ex);
+        }
         extent.addSystemInfo("Environment", "SIT");
 
         for (ISuite suite : suites) {
