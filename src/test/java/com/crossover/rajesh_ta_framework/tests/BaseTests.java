@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
-import net.lightbody.bmp.BrowserMobProxy;
 import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -17,8 +16,6 @@ import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 
 public class BaseTests extends Assert {
-
-    public BrowserMobProxy proxy;
 
     @BeforeMethod
     public void setupTest() throws MalformedURLException {
