@@ -4,6 +4,8 @@ RUN apt-get update
 
 RUN  apt-get install -y maven
 
+RUN apt-get install -y wget
+
 COPY pom.xml /usr/local/crossover-tests/pom.xml
 
 COPY src /usr/local/crossover-tests/src
