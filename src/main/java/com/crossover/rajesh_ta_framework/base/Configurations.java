@@ -17,7 +17,7 @@ public class Configurations {
     public static String IE_DRIVER_EXE = getProp().getProperty("crossover.ie.driver");
     private static Properties prop;
     private static HashMap<String, String> urlMap;
-    public static String SELENIUM_GRID_URL = "https://" + getProp().getProperty("crossover.hub.url") + ":4444/wd/hub";
+    public static String SELENIUM_GRID_URL = "http://" + getProp().getProperty("crossover.hub.url") + ":4444/wd/hub";
 
     private static Properties getProp() {
 
