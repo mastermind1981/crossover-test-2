@@ -8,6 +8,8 @@ RUN  apt-get install -y maven
 
 RUN apt-get install -y wget
 
+RUN apt-get -y -f install
+
 RUN apt-get install -y chromium-browser
 
 COPY pom.xml /usr/local/crossover-tests/pom.xml
