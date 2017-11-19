@@ -26,7 +26,7 @@ services:
       - firefox
       - chrome
     environment:
-      - MODULE=order-src/test/resources/crossover_tests.xml
+      - MODULE=src/test/resources/crossover_tests.xml
       - BROWSER=CHROME
       - SELENIUM_HUB=selenium-hub
     command: mvn clean test -Dcrossover.browser=$BROWSER -Dcrossover.timeout.seconds=50 -Dcrossover.remote=true -Dcrossover.hub.url=$SELENIUM_HUB  -Dcrossover.web.url=https://www.crossover.com -Dcrossover.fork.count=4 -Dcrossover.suite.xml=$MODULE
