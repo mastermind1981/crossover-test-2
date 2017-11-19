@@ -20,8 +20,7 @@ services:
       - HUB_PORT_4444_TCP_ADDR=selenium-hub
       - HUB_PORT_4444_TCP_PORT=4444
   crossover-tests:
-    image: rajesh23427/crossovertest:automationtest
-    container_name: crossover-tests
+    image: rajeshtest:latest
     depends_on:
       - firefox
       - chrome
