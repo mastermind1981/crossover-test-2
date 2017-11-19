@@ -24,7 +24,5 @@ services:
     container_name: crossover-tests
     depends_on:
       - firefox
-      - chrome        
-    command: pwd
-    command: ls -lrt
+      - chrome
     command: mvn clean install -Dcrossover.browser=CHROME -Dcrossover.timeout.seconds=50 -Dcrossover.remote=true -Dcrossover.hub.url=selenium-hub  -Dcrossover.web.url=https://www.crossover.com -Dcrossover.fork.count=4 -Dcrossover.suite.xml=src/test/resources/crossover_tests.xml
