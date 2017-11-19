@@ -8,13 +8,15 @@ RUN  apt-get install -y maven
 
 RUN apt-get install -y wget
 
+RUN apt-get install -y chromium-browser
+
 COPY pom.xml /usr/local/crossover-tests/pom.xml
 
 COPY src /usr/local/crossover-tests/src
 
 WORKDIR  /usr/local/crossover-tests
 
-RUN apt-get install unzip
+RUN apt-get install -y unzip
 RUN wget -N http://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip
 
 RUN unzip chromedriver_linux64.zip
