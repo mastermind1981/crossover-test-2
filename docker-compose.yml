@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
   selenium-hub:
     image: selenium/hub
@@ -19,3 +19,14 @@ services:
     environment:
       - HUB_PORT_4444_TCP_ADDR=selenium-hub
       - HUB_PORT_4444_TCP_PORT=4444
+  crossover-tests:
+    image: rajesh23427/crossovertest:automationtest
+    container_name: crossover-tests
+    depends_on:
+      - firefox
+      - chrome
+    environment:
+      - MODULE=src/test/resources/crossover_tests.xml
+      - BROWSER=CHROME
+      - SELENIUM_HUB=selenium-hub
+      - REMOTE=true
