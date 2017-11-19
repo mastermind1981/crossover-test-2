@@ -19,13 +19,3 @@ services:
     environment:
       - HUB_PORT_4444_TCP_ADDR=selenium-hub
       - HUB_PORT_4444_TCP_PORT=4444
-  crossover-tests:
-    image: rajeshtest:latest
-    depends_on:
-      - firefox
-      - chrome
-    environment:
-      - MODULE=src/test/resources/crossover_tests.xml
-      - BROWSER=CHROME
-      - SELENIUM_HUB=selenium-hub
-      - REMOTE=true
