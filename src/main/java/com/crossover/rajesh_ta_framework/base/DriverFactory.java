@@ -38,7 +38,7 @@ public class DriverFactory {
                 capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
                 capabilities.setPlatform(Platform.ANY);
                 if (Configurations.REMOTE) {
-                    driver = new RemoteWebDriver(new URL(Configurations.SELENIUM_GRID_URL), capabilities);
+                    driver = new RemoteWebDriver(new URL("http://"+Configurations.SELENIUM_GRID_URL+":4444/wd/hub"), capabilities);
                 } else {
                     System.out.println(Configurations.CHROME_DRIVER_EXE);
                     System.setProperty("webdriver.chrome.driver", Configurations.CHROME_DRIVER_EXE);
@@ -51,7 +51,7 @@ public class DriverFactory {
                 capabilities.setCapability("marionette", true);
 
                 if (Configurations.REMOTE) {
-                    driver = new RemoteWebDriver(new URL(Configurations.SELENIUM_GRID_URL), capabilities);
+                    driver = new RemoteWebDriver(new URL("http://"+Configurations.SELENIUM_GRID_URL+":4444/wd/hub"), capabilities);
                 } else {
                     System.out.println("Firefox instance.....");
                     System.setProperty("webdriver.gecko.driver", Configurations.FIREFOX_DRIVER_EXE);
@@ -74,7 +74,7 @@ public class DriverFactory {
                 capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
                 capabilities.setPlatform(Platform.ANY);
                 if (Configurations.REMOTE) {
-                    driver = new RemoteWebDriver(new URL(Configurations.SELENIUM_GRID_URL), capabilities);
+                    driver = new RemoteWebDriver(new URL("http://"+Configurations.SELENIUM_GRID_URL+":4444/wd/hub"), capabilities);
                 } else {
                     System.setProperty("webdriver.chrome.driver", Configurations.CHROME_DRIVER_EXE);
                     driver = new ChromeDriver(capabilities);
