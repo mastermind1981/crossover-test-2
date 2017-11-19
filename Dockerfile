@@ -8,7 +8,7 @@ RUN  apt-get install -y maven
 
 RUN apt-get install -y wget
 
-RUN apt-get install libxi6 libgconf-2-4
+RUN apt-get install -y libxi6 libgconf-2-4
 
 COPY pom.xml /usr/local/crossover-tests/pom.xml
 
