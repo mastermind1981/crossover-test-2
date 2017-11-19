@@ -10,7 +10,7 @@ RUN apt-get install -y wget
 
 RUN apt-get -y -f install
 
-RUN apt-get install -y chromium-browser
+RUN apt-get install -y chromium
 
 COPY pom.xml /usr/local/crossover-tests/pom.xml
 
