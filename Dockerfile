@@ -26,6 +26,6 @@ RUN apt-get -y install xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xf
 RUN apt-get -y install imagemagick x11-apps
 RUN Xvfb -ac :99 -screen 0 1280x1024x16 &
 RUN export DISPLAY=:99
-RUN apt-get install libxi6 libgconf-2-4
+RUN apt-get -y install libxi6 libgconf-2-4
 
 RUN mvn clean test -Dcrossover.browser=CHROME -Dcrossover.gecko.driver=/usr/local/crossover-tests/geckodriver -Dcrossover.chrome.driver=/usr/local/crossover-tests/chromedriver -Dcrossover.timeout.seconds=50 -Dcrossover.remote=false -Dcrossover.hub.url=http://localhost:4444/wd/hub -Dcrossover.web.url=https://www.crossover.com -Dcrossover.fork.count=4 -Dcrossover.suite.xml=src/test/resources/crossover_tests.xml
